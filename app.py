@@ -6,7 +6,7 @@ app = Flask(__name__)
 # Define a single route
 @app.route("/")
 def home():
-    return "<h1>Jonah's Portfolio</h1><p>This is my Portfolio</p>"
+    return "<h1>My Portfolio is currently under construction. Come back later</h1><p></p>"
 
 # Only run the server when executed directly
 if __name__ == "__main__":
