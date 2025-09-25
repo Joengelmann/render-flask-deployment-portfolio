@@ -9,3 +9,10 @@ env/
 ENV/
 .ENV/
 *.env
+
+# MacOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/

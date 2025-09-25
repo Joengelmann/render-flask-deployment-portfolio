@@ -1,0 +1,99 @@
+- title: Titanic Data Visualization
+  summary: Tableau analysis of Kaggle’s Titanic dataset to surface survival patterns by class, gender, and age.
+  tech: [Tableau]
+  links: {}
+  image: "/static/img/Titanic.jpg"
+  highlights:
+    - Built interactive dashboards with bar, funnel, and drill-through views for exploratory analysis
+    - Applied LOD expressions and mapping to clean locations and create dynamic stories
+  tags: [Data Viz, EDA, Analysis]
+  date: 2025-06
+
+- title: Wine Quality Analysis
+  summary: Modeled wine quality using seven supervised ML algorithms with cross-validation and grid search.
+  tech: [Python, scikit-learn, pandas, numpy, matplotlib]
+  links: { github: "https://github.com/Joengelmann/Wine-Analysis"}
+  image: "/static/img/Wine.webp"
+  highlights:
+    - Compared Logistic and Linear Regression, SVM, k-NN, Decision Tree, Random Forest and Naive Bayes.
+    - Achieved ~70% accuracy; Random Forest best overall, k-NN strongest minority recall
+  tags: [ML, EDA]
+  date: 2025-06
+
+- title: NBA Player Predictions
+  summary: Predicted NBA draft likelihood using SCU athletes’ performance and combine metrics.
+  tech: [Python, scikit-learn, pandas, numpy]
+  links: {}
+  image: "/static/img/Basketball.webp"
+  highlights:
+    - Trained logistic regression and decision trees on wingspan, vertical, sprint speed, and more
+    - Produced model-driven assessments for player potential and draft probability
+  tags: [ML, Sports]
+  date: 2025-04
+
+- title: School Course & Teacher Relational Database
+  summary: Designed a MySQL schema to manage enrollments, students, professors, departments, and courses.
+  tech: [MySQL, SQL]
+  links: { github: "", demo: "" }
+  image: "/static/img/Teacher.jpg"
+  highlights:
+    - Implemented normalized tables with keys, constraints, and indexes
+    - Wrote complex queries for grades, offerings, and academic performance trends
+  tags: [Database, SQL]
+  date: 2025-04
+
+- title: iOS Alert App — Beacon
+  summary: SwiftUI app with Firestore backend for rapid alerts and live location sharing with selected contacts.
+  tech: [SwiftUI, Firebase Firestore]
+  links: { github: "https://github.com/Joengelmann/Beacon", demo: "https://devpost.com/software/beacon-aqdfic" }
+  image: "/static/img/Beacon.jpg"
+  highlights:
+    - Built secure friend selection, real-time updates, and background location handling
+    - Implemented basic auth and schema for messages and sessions
+  tags: [iOS, Mobile, App]
+  date: 2024-03
+
+- title: Ultimate Frisbee Analysis
+  summary: Statistical analysis pipeline and relational database for multi-year ultimate frisbee data.
+  tech: [MySQL, Python, pandas]
+  links: {}
+  image: "/static/img/Frisbee.jpg"
+  highlights:
+    - Ingested raw CSVs into a relational schema; built selection functions and views
+    - Ran multiple regression and created custom metrics for score prediction and player value
+  tags: [Sports, Analytics, SQL]
+  date: 2024-06
+
+- title: Social Network App (C++/Qt)
+  summary: Desktop social networking prototype with friend suggestions and messaging.
+  tech: [C++, Qt]
+  links: { github: "https://github.com/Joengelmann/SocialNetwork"}
+  image: "/static/img/SocialNetwork.png"
+  highlights:
+    - Implemented public/private messaging and a clickable GUI
+    - Built a friend recommendation algorithm over user graphs
+  tags: [App, C++]
+  date: 2023-12
+
+- title: Alzheimer’s Brain Scan Modeling (Wharton DSA)
+  summary: Cleaned, repaired, and visualized complex brain scan data; modeled dementia indicators.
+  tech: [Python, R]
+  links: { demo: "https://docs.google.com/presentation/d/1M4WU-JDmtgf6vyrpW5BGY2iW_MFSPaOsnqakspaUilI/edit?slide=id.g6c52a2e8d8_0_177#slide=id.g6c52a2e8d8_0_177" }
+  image: "/static/img/Alzheimers.webp"
+  highlights:
+    - Built linear, logistic, and decision tree models to predict dementia indicators
+    - Produced visual analyses and quality checks over noisy medical data
+  tags: [ML, Health]
+  date: 2022-08
+
+- title: Baseball Outcome Modeling (UMN ML Summer Program)
+  summary: Trained six classifiers for baseball prediction with dimensionality reduction and tuning.
+  tech: [Python, scikit-learn, pandas]
+  links: { github: "https://github.com/Joengelmann/BaseballPredictor"}
+  image: "/static/img/Baseball.webp"
+  highlights:
+    - Applied data reduction, hyperparameter search, and evaluation across multiple models
+    - Compared performance and feature signals driving predictions
+  tags: [ML, Sports]
+  date: 2021-07
+

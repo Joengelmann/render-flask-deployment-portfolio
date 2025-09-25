@@ -1,13 +1,19 @@
-from flask import Flask
+from flask import Flask, render_template
+import yaml, os
 
-# Create the app
 app = Flask(__name__)
 
-# Define a single route
+def load_yaml(path):
+    with open(path, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f)
+
 @app.route("/")
 def home():
-    return "<h1>My Portfolio is currently under construction. Come back later</h1><p></p>"
+    projects = load_yaml(os.path.join("data", "projects.yaml"))
+    experience = load_yaml(os.path.join("data", "experience.yaml"))
+    # sort newest first if you want
+    projects = sorted(projects, key=lambda x: x.get("date",""), reverse=True)
+    return render_template("index.html", projects=projects, experience=experience)
 
-# Only run the server when executed directly
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

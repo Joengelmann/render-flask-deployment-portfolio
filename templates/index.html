@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+{% block title %}Jonah Engelmann · Portfolio{% endblock %}
+{% block content %}
+
+<section id="about" class="section hero">
+  <div class="hero-text">
+    <h1>Hi, I'm Jonah Engelmann</h1>
+    <p>Data Science · ML · Analytics. I build models and apps that make estimates smarter and decisions faster.</p>
+    <div class="links">
+      <a href="mailto:Joengelmann@scu.edu">Email</a>
+      <a href="https://github.com/Joengelmann" target="_blank">GitHub</a>
+      <a href="https://tinyurl.com/3jbkh45p" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+  <img src="{{ url_for('static', filename='img/Headshot1.jpg') }}" alt="Headshot" class="headshot" />
+</section>
+
+<section id="experience" class="section">
+  <h2>Experience</h2>
+
+  <ol class="exp-tl">
+    {% for job in experience %}
+    <li class="exp-item">
+      <!-- timeline node with date inside -->
+      <div class="exp-node">
+        <time class="exp-dot">
+          {{ job.dates.split('-')[0] | trim }}<br>
+          –<br>
+          {{ job.dates.split('-')[1] | trim }}
+        </time>
+      </div>
+
+      <!-- job card -->
+      <article class="exp-card">
+        <header class="exp-head">
+          <div>
+            <h3 class="exp-role">{{ job.role }}</h3>
+            <span class="exp-company">· {{ job.company }}</span>
+          </div>
+          <img src="{{ job.logo }}" alt="{{ job.company }} logo" class="exp-logo">
+        </header>
+
+        {% if job.summary %}
+        <p class="exp-summary">{{ job.summary }}</p>
+        {% endif %}
+
+        <!-- Toggle button -->
+        <button
+          class="btn exp-details-btn"
+          type="button"
+          aria-expanded="false"
+          aria-controls="exp-extra-{{ loop.index }}"
+        >
+          Details
+        </button>
+
+        <!-- Extra content (bullets) hidden by default -->
+        <div class="exp-extra" id="exp-extra-{{ loop.index }}" hidden>
+          {% if job.bullets and job.bullets|length > 0 %}
+          <ul class="bullets exp-bullets">
+            {% for b in job.bullets %}<li>{{ b }}</li>{% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+      </article>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+
+
+<section id="projects" class="section">
+  <h2>Projects</h2>
+  <div class="grid">
+    {% for p in projects %}
+    <article class="card">
+      <img src="{{ p.image }}" alt="{{ p.title }}">
+
+      <div class="card-body">
+        <!-- Visible teaser -->
+        <h3>{{ p.title }}</h3> <!-- keep accessible, hidden visually -->
+        <p>{{ p.summary }}</p>
+        <button class="btn details-btn" type="button" aria-haspopup="dialog" aria-controls="project-modal">
+          Details
+        </button>
+
+        <!-- Hidden full-details template (cloned into modal on click) -->
+        <div class="details-template" hidden>
+          <img src="{{ p.image }}" alt="{{ p.title }}" class="modal-hero">
+          <div class="modal-body">
+            <h3>{{ p.title }}</h3>
+            <p>{{ p.summary }}</p>
+            {% if p.highlights and p.highlights|length > 0 %}
+            <h4>Highlights</h4>
+            <ul class="bullets">
+              {% for h in p.highlights %}<li>{{ h }}</li>{% endfor %}
+            </ul>
+            {% endif %}
+            {% if p.tech and p.tech|length > 0 %}
+            <div class="meta"><strong>Tech:</strong> {{ p.tech | join(', ') }}</div>
+            {% endif %}
+            <div class="actions">
+              {% if p.links.demo %}<a href="{{ p.links.demo }}" target="_blank" rel="noopener">Live</a>{% endif %}
+              {% if p.links.github %}<a href="{{ p.links.github }}" target="_blank" rel="noopener">Code</a>{% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <h2>Contact</h2>
+  <p>Best way to reach me: <a href="mailto:Joengelmann@scu.edu">Joengelmann@scu.edu</a></p>
+</section>
+
+<!-- Modal root (one per page) -->
+<div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__dialog" role="document">
+    <button class="modal__close" type="button" aria-label="Close" data-close>&times;</button>
+    <div class="modal__content"><!-- populated by JS --></div>
+  </div>
+</div>
+
+{% endblock %}

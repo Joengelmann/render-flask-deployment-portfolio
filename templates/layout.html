@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{% block title %}Jonah Engelmann · Data Science{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <meta name="description" content="Data science portfolio: ML, analytics, and apps by Jonah Engelmann." />
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Jonah Engelmann · Data Science" />
+  <meta property="og:description" content="ML, analytics, and apps." />
+  <meta property="og:image" content="{{ url_for('static', filename='img/og.png') }}">
+</head>
+<body>
+  <header id="site-header" class="nav">
+    <nav class="container">
+      <a class="brand" href="#about">JE</a>
+      <ul class="nav-links">
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="container footer">
+    <span>© {{ 2025 }} Jonah Engelmann</span>
+  </footer>
+
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

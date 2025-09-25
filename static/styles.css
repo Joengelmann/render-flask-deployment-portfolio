@@ -1,0 +1,280 @@
+:root { --max: 1040px; --gap: 1.25rem; }
+* { box-sizing:border-box; }
+body { margin:0; font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial; color:#141414; }
+.container { max-width: var(--max); margin: 0 auto; padding: 0 var(--gap); }
+
+/* Nav */
+.nav { position: sticky; top:0; backdrop-filter: blur(8px); background: rgba(255,255,255,.7); border-bottom:1px solid #eee; z-index: 1000; transition: transform .25s ease;}
+.nav .container { display:flex; align-items:center; justify-content:space-between; height:64px; }
+.brand { font-weight:700; letter-spacing:.5px; text-decoration:none; color:#141414; }
+.nav-links { display:flex; gap:1rem; list-style:none; padding:0; margin:0; }
+.nav a { text-decoration:none; color:#141414; }
+
+/* Sections */
+.section { padding: 64px 0; }
+.hero { display:grid; grid-template-columns: 1.2fr .8fr; gap:2rem; align-items:center; }
+.hero .headshot { width: 400px; height: 400px; object-fit: cover; border-radius: 16px; justify-self: end; }
+.hero .links a { margin-right: .75rem; }
+
+/* Grid Cards */
+.grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1rem; }
+.card { border:1px solid #eee; border-radius:16px; overflow:hidden; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,.04); }
+.card img { width:100%; height:160px; object-fit:cover; }
+.card-body { padding:1rem; }
+.card h3 { margin:0 0 .5rem; }
+.bullets { margin:.5rem 0; padding-left:1.25rem; }
+.meta { color:#666; font-size:.9rem; margin-top:.25rem; }
+.actions a { margin-right:.75rem; }
+
+/* Footer */
+.footer { padding:24px 0; color:#666; font-size:.9rem; border-top:1px solid #eee; }
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero .headshot { justify-self: start; }
+}
+
+html { scroll-behavior: smooth; }
+
+/* Utility: screen-reader only */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+
+/* Buttons */
+.btn {
+  appearance: none;
+  border: 1px solid #ddd;
+  padding: .5rem .9rem;
+  border-radius: 10px;
+  background: #fafafa;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn:hover { background: #f2f2f2; }
+
+/* Keep teaser cards minimal */
+.card .bullets,
+.card .meta,
+.card .actions a:not(.details-btn) {
+  display: none;
+}
+
+/* Modal */
+.modal { 
+  position: fixed; inset: 0; z-index: 2000;
+  display: grid; grid-template-rows: 1fr;
+  place-items: center;
+  opacity: 0; pointer-events: none; transform: scale(.98);
+  transition: opacity .18s ease, transform .18s ease;
+}
+.modal.open { opacity: 1; pointer-events: auto; transform: scale(1); }
+
+.modal__backdrop {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.45);
+}
+
+.modal__dialog {
+  position: relative;
+  width: min(920px, 92vw);
+  max-height: 86vh;
+  overflow: auto;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 10px 40px rgba(0,0,0,.18);
+}
+
+.modal__close {
+  position: absolute; top: .5rem; right: .5rem;
+  width: 36px; height: 36px; border-radius: 999px;
+  border: none; background: #f5f5f5; cursor: pointer;
+  font-size: 22px; line-height: 1;
+}
+.modal__close:hover { background: #eee; }
+
+.modal__content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.25rem;
+  padding: 1.25rem;
+}
+
+.modal__content .modal-hero {
+  width: 100%; height: 100%; max-height: 380px; object-fit: cover; border-radius: 12px;
+}
+.modal__content .modal-body h3 { margin: 0 0 .25rem; }
+.modal__content .modal-body h4 { margin: .75rem 0 .25rem; }
+.modal__content .bullets { margin: .5rem 0 .5rem 1.25rem; }
+.modal__content .actions a { margin-right: .75rem; }
+
+/* Mobile modal layout */
+@media (max-width: 720px) {
+  .modal__content { grid-template-columns: 1fr; }
+  .modal__content .modal-hero { max-height: 240px; }
+}
+
+/* Prevent page scroll while modal open */
+body.modal-open { overflow: hidden; }
+
+/* ---------- Timeline variables ---------- */
+:root {
+  --exp-node: 80px;        /* bubble diameter */
+  --exp-node-col: 120px;   /* left column width (bubble column) */
+  --exp-gap: 1rem;         /* gap between bubble and card */
+  --exp-spine: #e9e9e9;    /* spine/connector color */
+  --exp-accent: #1f7aec;   /* bubble color */
+}
+
+/* ---------- Timeline container ---------- */
+.exp-tl {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Vertical spine through center of bubble column */
+.exp-tl::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--exp-node-col) / 2);
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--exp-spine);
+  transform: translateX(-1px); /* center the 2px line */
+}
+
+/* Row: bubble column + card column */
+.exp-item {
+  display: grid;
+  grid-template-columns: var(--exp-node-col) 1fr;
+  gap: var(--exp-gap);
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.exp-node { position: relative; display: grid; align-content: start; }
+
+/* Blue date bubble (date text inside) */
+.exp-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--exp-node);
+  height: var(--exp-node);
+  border-radius: 50%;
+  background: var(--exp-accent);
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 700;
+  text-align: center;
+  padding: .25rem;
+  position: relative;
+  z-index: 1;
+  /* center bubble on spine */
+  margin-left: calc((var(--exp-node-col) / 2) - (var(--exp-node) / 2));
+  line-height: 1.1;
+}
+
+.exp-card::before {
+  content: "";
+  position: absolute;
+  left: calc(-1 * ((var(--exp-node-col) / 2) + var(--exp-gap)));
+  width: calc((var(--exp-node-col) / 2) + var(--exp-gap));
+  height: 2px;
+  background: var(--exp-spine);
+  top: calc(var(--exp-node) / 2); /* aligns to bubble center */
+}
+
+/* Responsive variables tweak */
+@media (max-width: 700px) {
+  :root {
+    --exp-node: 68px;
+    --exp-node-col: 104px;
+    --exp-gap: .75rem;
+  }
+}
+
+
+.exp-card {
+  position: relative;
+  border: 1px solid #eee;
+  background: #fff;
+  border-radius: 14px;
+  padding: 1rem 1rem 1rem 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+
+.exp-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  border-color: #e8eefb;
+}
+
+/* .exp-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .35rem .5rem;
+  margin-bottom: .25rem;
+} */
+
+.exp-head {
+  display: flex;
+  justify-content: space-between; /* pushes logo to the right */
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.exp-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.exp-role {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.exp-company {
+  color: #3a69c7;       /* subtle brand color for company */
+  font-weight: 600;
+}
+
+.exp-summary {
+  margin: .4rem 0 .6rem;
+  color: #333;
+}
+
+.exp-bullets {
+  margin: .5rem 0 0 .95rem;
+}
+
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .exp-card { transition: none; }
+}
+
+/* Hide the extra section by default (until JS toggles it) */
+.exp-extra[hidden] { display: none; }
+
+/* Button placement/spacing in the card */
+.exp-details-btn {
+  margin-top: .5rem;
+}
+
+/* Optional: a subtle “open” state for the card when expanded */
+.exp-card.is-open {
+  border-color: #e8eefb;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}

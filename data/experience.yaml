@@ -1,0 +1,33 @@
+- company: Mortenson
+  role: Data Analytics & Insights Intern
+  dates: Jun 2025 - Sep 2025
+  summary: Delivered end-to-end data science solutions at Mortenson, building machine learning pipelines, a Flask app for executives, and Fabric and Power BI analytics to improve labor forecasting and financial decisions.
+  logo: "/static/img/MortLogo2.jpeg"
+  bullets:
+    - Engineered an adaptive ML pipeline that cleans/normalizes construction task data, performs advanced feature engineering (transformations, encoding, outlier handling, synthetic rows), and systematically evaluates preprocessing/modeling “lever” combinations across NNs/GBMs/regularized linear models with nested cross-validation—outperforming estimator baselines.
+    - Benchmarked and diagnosed model performance vs. human estimators; exported deployable bundles (scalers/encoders/hyperparameters) to streamline inference and reproducibility.
+    - Built a Flask-based web app (Plotly + DataTables) that lets estimators input project details, generate hour/productivity predictions, visualize results against historical benchmarks, and explore most-similar past projects—demoed to Mortenson’s President.
+    - Automated ETL to scrape and consolidate hundreds of semi-structured financial documents into structured Excel (representing billions of dollars), then produced Python-driven graphs/tables across projects, years, and teams.
+    - Integrated Microsoft Fabric dataflows with Power BI semantic models and built multi-page dashboards comparing solar/renewables project KPIs for exec-ready insights.
+
+- company: The Cloud Lab, SCU Department of Computer Science and Engineering
+  role: Large Language Model Researcher
+  dates: Mar 2024 - Jun 2025
+  summary: Built ELEET and ran over 1,000 evaluations to test LLM code generation, showing memorization often posed as reasoning while analyzing recency and prompt changes, and creating scalable benchmarks that cut manual review by nearly 90 percent.
+  logo: "/static/img/SCULogo.png"
+  bullets:
+    - Researched reasoning claims in large language models (LLMs), showing coding task performance is often driven by training data memorization instead of genuine reasoning ability
+    - Designed and executed large-scale evaluations on 1,000+ LeetCode problems, analyzing and visualizing recency effects and prompt perturbations to rigorously test LLM code generation accuracy
+    - Built ELEET, an automated framework that standardizes coding questions, generates prompts, parses LLM outputs into executable code, and runs structured tests to verify correctness end-to-end
+    - Scaled reproducible benchmarks across open- and closed-source LLMs, batch-testing hundreds of queries; engineered pipelines that cut manual evaluation time by ~90% and ensure consistent, comparable results
+
+- company: MN Veterans Hospital, Minneapolis Adaptive Design & Engineering
+  role: Computer Science Intern
+  dates: Jun 2023 - Sep 2023
+  summary: Built a full-stack app for veterans in stand-up wheelchairs that converts accelerometer data into precise angles and positioning/standing visuals, recognized with SCU’s REAL Award.
+  logo: "/static/img/VALogo.jpeg"
+  bullets:
+    - Built a full-stack app for the Minneapolis Adaptive Design & Engineering (MADE) program to analyze accelerometer data from stand-up wheelchairs used by veterans.
+    - Converted raw sensor streams into precise angle calculations and clear visuals of positioning and standing intervals, with upload, visualization, and export tools.
+    - Implemented a Python/Django backend with REST APIs for storage and retrieval and an HTML/CSS/JavaScript frontend
+    - Work recognized with SCU’s REAL Award.
