@@ -3,7 +3,7 @@
 This is the source code for my personal portfolio website, built with **Flask**, **Jinja**, and vanilla web technologies (HTML, CSS, JS).  
 It showcases my experience, featured projects, and contact information.
 
-🌐 **Live Deployment:** [jonahengelmannportfolio.onrender.com](https://jonahengelmann.com)
+🌐 **Live Deployment:** [jonahengelmann.com](https://jonahengelmann.com)
 
 ---
 
