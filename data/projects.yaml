@@ -1,3 +1,14 @@
+- title: MorningMotivationBot
+  summary: Flask web app that delivers personalized motivational messages, haikus, images, and music based on user mood.
+  tech: [Flask, OpenAI GPT-4o, DALL·E, TextBlob, Python]
+  links: {github: "https://github.com/Joengelmann/MorningMotivationBot"}
+  image: "/static/img/Morning.avif"
+  highlights:
+    - Leveraged OpenAI GPT-4o, DALL·E, and TextBlob sentiment analysis to generate tailored text, visuals, and music recommendations
+    - Built a clean HTML/CSS frontend with dynamic rendering of responses, images, and YouTube links
+  tags: [AI, NLP, Flask, Web App]
+  date: 2025-06
+
 - title: Titanic Data Visualization
   summary: Tableau analysis of Kaggle’s Titanic dataset to surface survival patterns by class, gender, and age.
   tech: [Tableau]

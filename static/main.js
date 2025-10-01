@@ -1,3 +1,39 @@
+// ---------- Theme toggle (persisted) ----------
+(function () {
+  const KEY = 'theme'; // 'light' | 'dark'
+  const root = document.documentElement;
+  const btn = document.getElementById('theme-toggle');
+
+  // 1) Initial theme: localStorage -> prefers-color-scheme -> fallback
+  const stored = localStorage.getItem(KEY);
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initial = stored || (prefersDark ? 'dark' : 'light');
+  setTheme(initial);
+
+  function setTheme(mode) {
+    root.setAttribute('data-theme', mode);
+    localStorage.setItem(KEY, mode);
+    if (btn) btn.textContent = mode === 'dark' ? '☀️ Light' : '🌙 Dark';
+    if (btn) btn.setAttribute('aria-label', mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+
+  // 2) Listen for OS changes (only if user hasn't explicitly chosen)
+  if (!stored && window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      setTheme(e.matches ? 'dark' : 'light');
+    });
+  }
+
+  // 3) Button click toggles theme
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const next = (root.getAttribute('data-theme') === 'dark') ? 'light' : 'dark';
+      setTheme(next);
+    });
+  }
+})();
+
+
 let lastY = window.scrollY;
 const header = document.getElementById('site-header');
 
