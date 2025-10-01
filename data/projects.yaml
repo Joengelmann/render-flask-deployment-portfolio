@@ -1,7 +1,7 @@
 - title: Titanic Data Visualization
   summary: Tableau analysis of Kaggle’s Titanic dataset to surface survival patterns by class, gender, and age.
   tech: [Tableau]
-  links: {}
+  links: {report: "static/report/Titanic.pdf"}
   image: "/static/img/Titanic.jpg"
   highlights:
     - Built interactive dashboards with bar, funnel, and drill-through views for exploratory analysis
@@ -10,9 +10,10 @@
   date: 2025-06
 
 - title: Wine Quality Analysis
+  featured: true
   summary: Modeled wine quality using seven supervised ML algorithms with cross-validation and grid search.
   tech: [Python, scikit-learn, pandas, numpy, matplotlib]
-  links: { github: "https://github.com/Joengelmann/Wine-Analysis"}
+  links: {report: "static/report/Wine.pdf", github: "https://github.com/Joengelmann/Wine-Analysis"}
   image: "/static/img/Wine.webp"
   highlights:
     - Compared Logistic and Linear Regression, SVM, k-NN, Decision Tree, Random Forest and Naive Bayes.
@@ -23,7 +24,7 @@
 - title: NBA Player Predictions
   summary: Predicted NBA draft likelihood using SCU athletes’ performance and combine metrics.
   tech: [Python, scikit-learn, pandas, numpy]
-  links: {}
+  links: {report: "static/report/Basketball.pdf"}
   image: "/static/img/Basketball.webp"
   highlights:
     - Trained logistic regression and decision trees on wingspan, vertical, sprint speed, and more
@@ -32,9 +33,10 @@
   date: 2025-04
 
 - title: School Course & Teacher Relational Database
+  featured: true
   summary: Designed a MySQL schema to manage enrollments, students, professors, departments, and courses.
   tech: [MySQL, SQL]
-  links: { github: "", demo: "" }
+  links: {report: "static/report/CourseTeacher.pdf"}
   image: "/static/img/Teacher.jpg"
   highlights:
     - Implemented normalized tables with keys, constraints, and indexes

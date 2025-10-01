@@ -278,3 +278,41 @@ body.modal-open { overflow: hidden; }
   border-color: #e8eefb;
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
+
+/* Featured projects grid: wider columns */
+.grid--featured {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Bigger card treatment for featured */
+.card--featured {
+  border-width: 2px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.06);
+}
+
+.card--featured img {
+  height: 260px;            /* taller hero image */
+  object-fit: cover;
+}
+
+.card--featured .card-body h3 {
+  font-size: 1.25rem;
+  margin-bottom: .4rem;
+}
+
+.card--featured .card-body p {
+  font-size: 1rem;
+}
+
+/* Optional: on large screens, let featured span 2 columns if space allows */
+@media (min-width: 1100px) {
+  .card--featured {
+    grid-column: span 2;
+  }
+}
+
+/* Subhead spacing */
+.projects-subhead { margin-top: 2rem; }

@@ -5,7 +5,7 @@
 <section id="about" class="section hero">
   <div class="hero-text">
     <h1>Hi, I'm Jonah Engelmann</h1>
-    <p>Data Science · ML · Analytics. I build models and apps that make estimates smarter and decisions faster. </p>
+    <p>Data Science · ML · AI · Analytics. I'm passionate about using data to solve problems in places where data hasn't been used before.</p>
     <div class="links">
       <a href="mailto:Joengelmann@scu.edu">Email</a>
       <a href="https://github.com/Joengelmann" target="_blank">GitHub</a>
@@ -68,24 +68,21 @@
   </ol>
 </section>
 
-
-
 <section id="projects" class="section">
-  <h2>Projects</h2>
-  <div class="grid">
-    {% for p in projects %}
-    <article class="card">
+  <h2>Featured Projects</h2>
+  <div class="grid grid--featured">
+    {# Grab up to 2 featured projects #}
+    {% for p in (projects | selectattr('featured', 'equalto', true) | list)[:2] %}
+    <article class="card card--featured">
       <img src="{{ p.image }}" alt="{{ p.title }}">
 
       <div class="card-body">
-        <!-- Visible teaser -->
-        <h3>{{ p.title }}</h3> <!-- keep accessible, hidden visually -->
+        <h3>{{ p.title }}</h3>
         <p>{{ p.summary }}</p>
         <button class="btn details-btn" type="button" aria-haspopup="dialog" aria-controls="project-modal">
           Details
         </button>
 
-        <!-- Hidden full-details template (cloned into modal on click) -->
         <div class="details-template" hidden>
           <img src="{{ p.image }}" alt="{{ p.title }}" class="modal-hero">
           <div class="modal-body">
@@ -103,6 +100,46 @@
             <div class="actions">
               {% if p.links.demo %}<a href="{{ p.links.demo }}" target="_blank" rel="noopener">Live</a>{% endif %}
               {% if p.links.github %}<a href="{{ p.links.github }}" target="_blank" rel="noopener">Code</a>{% endif %}
+              {% if p.links.report %}<a href="{{ p.links.report }}" target="_blank" rel="noopener">Report</a>{% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+
+  <h2 class="projects-subhead">Other Projects</h2>
+  <div class="grid">
+    {% for p in projects | rejectattr('featured', 'equalto', true) %}
+    <article class="card">
+      <img src="{{ p.image }}" alt="{{ p.title }}">
+
+      <div class="card-body">
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.summary }}</p>
+        <button class="btn details-btn" type="button" aria-haspopup="dialog" aria-controls="project-modal">
+          Details
+        </button>
+
+        <div class="details-template" hidden>
+          <img src="{{ p.image }}" alt="{{ p.title }}" class="modal-hero">
+          <div class="modal-body">
+            <h3>{{ p.title }}</h3>
+            <p>{{ p.summary }}</p>
+            {% if p.highlights and p.highlights|length > 0 %}
+            <h4>Highlights</h4>
+            <ul class="bullets">
+              {% for h in p.highlights %}<li>{{ h }}</li>{% endfor %}
+            </ul>
+            {% endif %}
+            {% if p.tech and p.tech|length > 0 %}
+            <div class="meta"><strong>Tech:</strong> {{ p.tech | join(', ') }}</div>
+            {% endif %}
+            <div class="actions">
+              {% if p.links.demo %}<a href="{{ p.links.demo }}" target="_blank" rel="noopener">Live</a>{% endif %}
+              {% if p.links.github %}<a href="{{ p.links.github }}" target="_blank" rel="noopener">Code</a>{% endif %}
+              {% if p.links.report %}<a href="{{ p.links.report }}" target="_blank" rel="noopener">Report</a>{% endif %}
             </div>
           </div>
         </div>
@@ -111,6 +148,7 @@
     {% endfor %}
   </div>
 </section>
+
 
 <section id="contact" class="section">
   <h2>Contact</h2>
