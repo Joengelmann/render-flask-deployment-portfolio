@@ -34,7 +34,11 @@
         <header class="exp-head">
           <div>
             <h3 class="exp-role">{{ job.role }}</h3>
-            <span class="exp-company">· {{ job.company }}</span>
+            <span class="exp-company">
+              · <a href="{{ job.link }}" target="_blank" rel="noopener noreferrer">
+                {{ job.company }}
+              </a>
+            </span>
           </div>
           <img src="{{ job.logo }}" alt="{{ job.company }} logo" class="exp-logo">
         </header>

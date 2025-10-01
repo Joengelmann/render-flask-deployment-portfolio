@@ -326,3 +326,20 @@ body.modal-open { overflow: hidden; }
   .hero { grid-template-columns: 1fr; }
   .hero .headshot { justify-self: start; }
 }
+
+/* ===================== LINKS ===================== */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover,
+a:focus {
+  color: color-mix(in oklab, var(--accent) 70%, white 30%);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--accent); /* keep same as normal */
+}

@@ -3,6 +3,7 @@
   dates: Jun 2025 - Sep 2025
   summary: Delivered end-to-end data science solutions at Mortenson, building machine learning pipelines, a Flask app for executives, and Fabric and Power BI analytics to improve labor forecasting and financial decisions.
   logo: "/static/img/MortLogo2.jpeg"
+  link: "https://www.mortenson.com/"
   bullets:
     - Engineered an adaptive ML pipeline that cleans/normalizes construction task data, performs advanced feature engineering (transformations, encoding, outlier handling, synthetic rows), and systematically evaluates preprocessing/modeling “lever” combinations across NNs/GBMs/regularized linear models with nested cross-validation—outperforming estimator baselines.
     - Benchmarked and diagnosed model performance vs. human estimators; exported deployable bundles (scalers/encoders/hyperparameters) to streamline inference and reproducibility.
@@ -15,6 +16,7 @@
   dates: Mar 2024 - Jun 2025
   summary: Built ELEET and ran over 1,000 evaluations to test LLM code generation, showing memorization often posed as reasoning while analyzing recency and prompt changes, and creating scalable benchmarks that cut manual review by nearly 90 percent.
   logo: "/static/img/SCULogo.png"
+  link: "https://www.scu.edu/engineering/"
   bullets:
     - Researched reasoning claims in large language models (LLMs), showing coding task performance is often driven by training data memorization instead of genuine reasoning ability
     - Designed and executed large-scale evaluations on 1,000+ LeetCode problems, analyzing and visualizing recency effects and prompt perturbations to rigorously test LLM code generation accuracy
@@ -26,6 +28,7 @@
   dates: Jun 2023 - Sep 2023
   summary: Built a full-stack app for veterans in stand-up wheelchairs that converts accelerometer data into precise angles and positioning/standing visuals, recognized with SCU’s REAL Award.
   logo: "/static/img/VALogo.jpeg"
+  link: "https://www.va.gov/minneapolis-health-care/programs/minneapolis-adaptive-design-engineering-program/"
   bullets:
     - Built a full-stack app for the Minneapolis Adaptive Design & Engineering (MADE) program to analyze accelerometer data from stand-up wheelchairs used by veterans.
     - Converted raw sensor streams into precise angle calculations and clear visuals of positioning and standing intervals, with upload, visualization, and export tools.
