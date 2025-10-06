@@ -1,5 +1,5 @@
 - company: Mortenson
-  role: Data Analytics & Insights Intern
+  role: Data Science Intern
   dates: Jun 2025 - Sep 2025
   summary: Delivered end-to-end data science solutions at Mortenson, building machine learning pipelines, a Flask app for executives, and Fabric and Power BI analytics to improve labor forecasting and financial decisions.
   logo: "/static/img/MortLogo2.jpeg"
@@ -12,7 +12,7 @@
     - Integrated Microsoft Fabric dataflows with Power BI semantic models and built multi-page dashboards comparing solar/renewables project KPIs for exec-ready insights.
 
 - company: The Cloud Lab, SCU Department of Computer Science and Engineering
-  role: Large Language Model Researcher
+  role: AI Researcher
   dates: Mar 2024 - Jun 2025
   summary: Built ELEET and ran over 1,000 evaluations to test LLM code generation, showing memorization often posed as reasoning while analyzing recency and prompt changes, and creating scalable benchmarks that cut manual review by nearly 90 percent.
   logo: "/static/img/SCULogo.png"
@@ -24,7 +24,7 @@
     - Scaled reproducible benchmarks across open- and closed-source LLMs, batch-testing hundreds of queries; engineered pipelines that cut manual evaluation time by ~90% and ensure consistent, comparable results
 
 - company: MN Veterans Hospital, Minneapolis Adaptive Design & Engineering
-  role: Computer Science Intern
+  role: Database Intern
   dates: Jun 2023 - Sep 2023
   summary: Built a full-stack app for veterans in stand-up wheelchairs that converts accelerometer data into precise angles and positioning/standing visuals, recognized with SCU’s REAL Award.
   logo: "/static/img/VALogo.jpeg"
