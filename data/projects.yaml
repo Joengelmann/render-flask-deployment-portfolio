@@ -1,3 +1,15 @@
+- title: Stock Sentiment vs Market Movement
+  summary: Analyzed how Reddit investor sentiment aligns with stock market behavior using NLP, time series analysis, topic modeling, and association rule mining.
+  tech: [Python, PyTorch, transformers, statsmodels, yfinance]
+  links: { report: "static/report/Stock.pdf", github: "https://github.com/Joengelmann/stock-sentiments" }
+  image: "/static/img/Stock.jpg"
+  highlights:
+    - Applied RoBERTa-based sentiment analysis to WallStreetBets posts and aligned daily sentiment with stock returns
+    - Used Pearson correlation and Granger causality to study lead-lag relationships between sentiment and price movements
+    - Discovered discussion themes with LDA and market co-movement patterns with Apriori association rules
+  tags: [NLP, Time Series, ML, Finance, Data Mining]
+  date: 2025-11
+
 - title: MorningMotivationBot
   summary: Flask web app that delivers personalized motivational messages, haikus, images, and music based on user mood.
   tech: [Flask, OpenAI GPT-4o, DALL·E, TextBlob, Python]
