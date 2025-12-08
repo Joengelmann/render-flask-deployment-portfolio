@@ -90,4 +90,4 @@ Render serves the Flask app defined in `app.py`.
 **Jonah Engelmann**  
 - [GitHub](https://github.com/Joengelmann)  
 - [LinkedIn](https://tinyurl.com/3jbkh45p)  
-- 📧 [Jonah.Engelmann@gmail.com](mailto:Jonah.Engelmann@gmail.com)
+- [jonah.engelmann@gmail.com](mailto:jonah.engelmann@gmail.com)
