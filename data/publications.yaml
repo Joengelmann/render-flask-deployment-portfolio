@@ -1,0 +1,14 @@
+- title: "Large Language Models Exhibit Limited Reasoning Ability on Coding Problems"
+  authors: "Jo, J., Engelmann, J., & Choi, S."
+  venue: "IJCNLP-AACL"
+  year: "2025"
+  link: "https://aclanthology.org/2025.ijcnlp-short.13/"
+  pdf: "https://aclanthology.org/2025.ijcnlp-short.13.pdf"
+  citation: |
+    Jinyoung Jo, Jonah Engelmann, and Sean Choi. 2025. Large Language Models Exhibit Limited Reasoning Ability on Coding Problems. In Proceedings of the 14th International Joint Conference on Natural Language Processing and the 4th Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics, pages 139–146, Mumbai, India. The Asian Federation of Natural Language Processing and The Association for Computational Linguistics.
+  one_liner: "We show that LLMs' apparent success on coding problems is better explained by memorization than reasoning, using recency effects and prompt perturbations on LeetCode questions."
+  highlights:
+    - "Demonstrated a recency effect: LLM accuracy declines on newer LeetCode questions that are less likely to appear in training data."
+    - "Showed that small synonym-based prompt perturbations significantly degrade performance on otherwise equivalent coding problems."
+    - "Provided evidence that coding success in LLMs relies on surface-level pattern recognition rather than robust reasoning."
+

@@ -1,5 +1,5 @@
 - title: Stock Sentiment vs Market Movement
-  summary: Analyzed how Reddit investor sentiment aligns with stock market behavior using NLP, time series analysis, topic modeling, and association rule mining.
+  summary: Analyzed how Reddit investor sentiment aligns with stock market behavior using NLP and time series analysis.
   tech: [Python, PyTorch, transformers, statsmodels, yfinance]
   links: { report: "static/report/Stock.pdf", github: "https://github.com/Joengelmann/stock-sentiments" }
   image: "/static/img/Stock.jpg"

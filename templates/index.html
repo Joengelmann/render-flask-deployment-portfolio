@@ -71,6 +71,75 @@
   </ol>
 </section>
 
+<section id="publications" class="section">
+  <h2>Publications</h2>
+
+  <div class="pub-list">
+    {% for pub in publications %}
+    <article class="pub-card">
+      <header class="pub-head">
+        <div class="pub-main">
+          <h3 class="pub-title">
+            <a href="{{ pub.link }}" target="_blank" rel="noopener noreferrer">
+              {{ pub.title }}
+            </a>
+          </h3>
+
+          <div class="pub-meta">
+            {{ pub.authors }} · {{ pub.venue }} · {{ pub.year }}
+          </div>
+
+          {% if pub.one_liner %}
+          <p class="pub-summary">{{ pub.one_liner }}</p>
+          {% endif %}
+        </div>
+
+      </header>
+
+      {% if pub.highlights and pub.highlights|length > 0 %}
+      <button
+        class="btn pub-details-btn"
+        type="button"
+        aria-expanded="false"
+        aria-controls="pub-extra-{{ loop.index }}"
+      >
+        Details
+      </button>
+
+      <div class="pub-extra" id="pub-extra-{{ loop.index }}" hidden>
+        <ul class="bullets">
+          {% for h in pub.highlights %}
+            <li>{{ h }}</li>
+          {% endfor %}
+        </ul>
+
+        {% if pub.link or pub.pdf or pub.citation %}
+        <div class="pub-links">
+          {# DOI should use the same URL as the title link #}
+          {% if pub.link %}
+            <a class="pub-pill" href="{{ pub.link }}" target="_blank" rel="noopener noreferrer">DOI</a>
+          {% endif %}
+
+          {% if pub.pdf %}
+            <a class="pub-pill" href="{{ pub.pdf }}" target="_blank" rel="noopener noreferrer">PDF</a>
+          {% endif %}
+
+          {% if pub.citation %}
+            <button class="btn pub-pill pub-cite-btn" type="button" data-cite="{{ pub.citation | e }}">
+              Cite
+            </button>
+          {% endif %}
+        </div>
+        {% endif %}
+
+      </div>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+
 <section id="projects" class="section">
   <h2>Featured Projects</h2>
   <div class="grid grid--featured">
@@ -155,7 +224,7 @@
 
 <section id="contact" class="section">
   <h2>Contact</h2>
-  <p>Best way to reach me: <a href="mailto:jonah.engelmann@gmail.com">Jonah.Engelmann@gmail.com</a></p>
+  <p>Best way to reach me: <a href="mailto:jonah.engelmann@gmail.com">jonah.engelmann@gmail.com</a></p>
 </section>
 
 <!-- Modal root (one per page) -->

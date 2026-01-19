@@ -197,6 +197,129 @@ body {
 /* Prevent page scroll while modal open */
 body.modal-open { overflow: hidden; }
 
+
+/* ===================== PUBLICATIONS ===================== */
+.pub-list {
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+/* Publication card: intentionally NOT using .card styling */
+.pub-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: color-mix(in oklab, var(--card) 92%, var(--bg) 8%);
+  padding: 1rem 1rem .9rem;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.pub-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  border-color: color-mix(in oklab, var(--accent) 16%, var(--border));
+}
+
+.pub-card.is-open {
+  border-color: color-mix(in oklab, var(--accent) 18%, var(--border));
+}
+
+.pub-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.pub-title {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.pub-meta {
+  margin-top: .25rem;
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.pub-summary {
+  margin: .6rem 0 0;
+  color: var(--text);
+}
+
+.pub-actions {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Link pills so it doesn't look like project buttons */
+.pub-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .35rem .65rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--card) 85%, var(--bg) 15%);
+  font-weight: 650;
+  font-size: .88rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.pub-pill:hover,
+.pub-pill:focus {
+  background: color-mix(in oklab, var(--card) 78%, var(--bg) 22%);
+  text-decoration: none;
+}
+
+/* Keep the Details button subtle */
+.pub-details-btn {
+  margin-top: .75rem;
+}
+
+/* Extra content area */
+.pub-extra {
+  margin-top: .65rem;
+  padding-top: .65rem;
+  border-top: 1px dashed color-mix(in oklab, var(--border) 65%, var(--muted) 35%);
+}
+
+.pub-extra[hidden] { display: none; }
+
+/* Mobile: stack actions under title */
+@media (max-width: 720px) {
+  .pub-head { flex-direction: column; }
+  .pub-actions { width: 100%; }
+}
+
+
+.pub-links {
+  margin-top: .75rem;
+  padding-top: .5rem;
+  border-top: 1px dashed var(--border);
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+.pub-links .pub-pill {
+  font-weight: 650;
+  font-size: .88rem;
+}
+
+.pub-links .pub-pill.btn {
+  /* make button pills match anchor pills */
+  padding: .35rem .65rem;
+  border-radius: 999px;
+}
+
+
+
 /* ===================== TIMELINE ===================== */
 .exp-tl {
   list-style: none;

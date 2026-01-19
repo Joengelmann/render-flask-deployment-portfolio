@@ -118,3 +118,38 @@ document.addEventListener('click', (e) => {
     card?.classList.remove('is-open');
   }
 });
+
+// ---------- Publications: expand/collapse highlights ----------
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.pub-details-btn');
+  if (!btn) return;
+
+  const controlsId = btn.getAttribute('aria-controls');
+  const extra = document.getElementById(controlsId);
+  const card = btn.closest('.pub-card');
+
+  const willOpen = extra.hasAttribute('hidden');
+  if (willOpen) {
+    extra.removeAttribute('hidden');
+    btn.setAttribute('aria-expanded', 'true');
+    btn.textContent = 'Hide details';
+    card?.classList.add('is-open');
+  } else {
+    extra.setAttribute('hidden', '');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.textContent = 'Details';
+    card?.classList.remove('is-open');
+  }
+});
+
+// ---------- Publications: copy citation ----------
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.pub-cite-btn');
+  if (!btn) return;
+
+  const text = btn.getAttribute('data-cite');
+  navigator.clipboard.writeText(text);
+  btn.textContent = 'Copied!';
+  setTimeout(() => (btn.textContent = 'Cite'), 1500);
+});
+
