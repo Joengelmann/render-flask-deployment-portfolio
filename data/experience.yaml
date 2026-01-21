@@ -14,14 +14,14 @@
 - company: The Cloud Lab, SCU Department of Computer Science and Engineering
   role: AI Researcher
   dates: Mar 2024 - Jun 2025
-  summary: Built ELEET and ran over 1,000 evaluations to test LLM code generation, showing memorization often posed as reasoning while analyzing recency and prompt changes, and creating scalable benchmarks that cut manual review by nearly 90 percent.
+  summary: Led a research project resulting in a peer-reviewed publication demonstrating that LLM coding performance is often driven by memorization rather than reasoning, using ELEET—an automated evaluation framework I built to run large-scale, reproducible benchmarks across modern language models.
   logo: "/static/img/SCULogo.png"
   link: "https://www.scu.edu/engineering/"
   bullets:
-    - Researched reasoning claims in large language models (LLMs), showing coding task performance is often driven by training data memorization instead of genuine reasoning ability
-    - Designed and executed large-scale evaluations on 1,000+ LeetCode problems, analyzing and visualizing recency effects and prompt perturbations to rigorously test LLM code generation accuracy
-    - Built ELEET, an automated framework that standardizes coding questions, generates prompts, parses LLM outputs into executable code, and runs structured tests to verify correctness end-to-end
-    - Scaled reproducible benchmarks across open- and closed-source LLMs, batch-testing hundreds of queries; engineered pipelines that cut manual evaluation time by ~90% and ensure consistent, comparable results
+    - Co-authored a peer-reviewed paper (IJCNLP-AACL 2025) analyzing reasoning claims in large language models through systematic evaluation of code-generation tasks
+    - Built ELEET, an end-to-end evaluation framework that standardizes coding problems, generates prompts, executes model-produced code, and verifies correctness automatically
+    - Ran 1,000+ controlled evaluations on LeetCode-style problems, isolating recency effects and prompt rewording sensitivity to distinguish memorization from reasoning
+    - Scaled benchmarks across open- and closed-source LLMs, reducing manual evaluation time by ~90% while ensuring consistent, reproducible comparisons
 
 - company: MN Veterans Hospital, Minneapolis Adaptive Design & Engineering
   role: Database Intern
