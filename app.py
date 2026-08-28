@@ -1,7 +1,12 @@
 from flask import Flask, render_template
+from datetime import datetime
 import yaml, os
 
 app = Flask(__name__)
+
+@app.context_processor
+def inject_current_year():
+    return {"current_year": datetime.now().year}
 
 def load_yaml(path):
     with open(path, "r", encoding="utf-8") as f:

@@ -1,15 +1,26 @@
 - company: Mortenson
+  role: Artificial Intelligence Intern
+  dates: Jun 2026 - Aug 2026
+  summary: Built a team of AI agents at Mortenson that automates the time-intensive process of putting together project proposals, turning a job that used to eat up an entire work week into one that takes about two hours.
+  logo: "/static/img/MortLogo2.jpeg"
+  link: "https://www.mortenson.com/"
+  bullets:
+    - Built a system of five AI agents that work together to write project proposal resumes automatically, cutting a process that used to take over 30 hours of manual work down to about 2 hours.
+    - Studied how the proposal process worked step by step and broke it down into pieces an AI agent could actually handle, so the system fit into the way the team already worked.
+    - Designed a mockup of the finished tool so the team could see and react to how the agents would cover the whole proposal process before any of it was built.
+
+- company: Mortenson
   role: Data Science Intern
   dates: Jun 2025 - Sep 2025
   summary: Delivered end-to-end data science solutions at Mortenson, building machine learning pipelines, a Flask app for executives, and Fabric and Power BI analytics to improve labor forecasting and financial decisions.
   logo: "/static/img/MortLogo2.jpeg"
   link: "https://www.mortenson.com/"
   bullets:
-    - Engineered an adaptive ML pipeline that cleans/normalizes construction task data, performs advanced feature engineering (transformations, encoding, outlier handling, synthetic rows), and systematically evaluates preprocessing/modeling “lever” combinations across NNs/GBMs/regularized linear models with nested cross-validation—outperforming estimator baselines.
-    - Benchmarked and diagnosed model performance vs. human estimators; exported deployable bundles (scalers/encoders/hyperparameters) to streamline inference and reproducibility.
-    - Built a Flask-based web app (Plotly + DataTables) that lets estimators input project details, generate hour/productivity predictions, visualize results against historical benchmarks, and explore most-similar past projects—demoed to Mortenson’s President.
-    - Automated ETL to scrape and consolidate hundreds of semi-structured financial documents into structured Excel (representing billions of dollars), then produced Python-driven graphs/tables across projects, years, and teams.
-    - Integrated Microsoft Fabric dataflows with Power BI semantic models and built multi-page dashboards comparing solar/renewables project KPIs for exec-ready insights.
+    - Built an adaptive ML pipeline that cleans and engineers features from construction task data, then tests combinations of preprocessing and modeling techniques, from neural networks to gradient boosting to regularized linear models, to beat human-estimator baselines.
+    - Benchmarked model accuracy against human estimators and packaged the best-performing models for fast, reproducible predictions.
+    - Built a Flask web app where estimators enter project details to get instant hour and productivity predictions, compare them against historical benchmarks, and browse similar past projects — demoed to Mortenson's President.
+    - Automated the extraction of financial data from hundreds of scattered documents, representing billions of dollars in projects, into clean spreadsheets and Python-generated charts comparing performance across projects, years, and teams.
+    - Connected Microsoft Fabric to Power BI to build multi-page dashboards tracking solar and renewables project performance for company executives.
 
 - company: The Cloud Lab, SCU Department of Computer Science and Engineering
   role: AI Researcher

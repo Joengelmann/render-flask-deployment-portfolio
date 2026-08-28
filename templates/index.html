@@ -5,10 +5,16 @@
 <section id="about" class="section hero">
   <div class="hero-text">
     <h1>Hi, I'm Jonah Engelmann</h1>
-    <p>Data Science · ML · AI · Analytics. I'm passionate about using data to solve problems in places where data hasn't been used before.</p>
+    <p>AI · Data · Tech Consulting. MSE in Data Science at UPenn, focused on using data and AI to solve problems in places where they haven't been used before.</p>
     <div class="links">
-      <a href="https://github.com/Joengelmann" target="_blank">GitHub</a>
-      <a href="https://tinyurl.com/3jbkh45p" target="_blank">LinkedIn</a>
+      <a class="btn social-btn" href="https://github.com/Joengelmann" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+      <a class="btn social-btn" href="https://tinyurl.com/3jbkh45p" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        LinkedIn
+      </a>
     </div>
   </div>
   <img src="{{ url_for('static', filename='img/Headshot1.png') }}" alt="Headshot" class="headshot" />
@@ -20,9 +26,10 @@
   <ol class="exp-tl">
     {% for job in experience %}
     <li class="exp-item">
-      <!-- timeline node with date inside -->
+      <!-- timeline node: small marker dot + plain-text date -->
       <div class="exp-node">
-        <time class="exp-dot">
+        <span class="exp-node-dot" aria-hidden="true"></span>
+        <time class="exp-date">
           {{ job.dates.split('-')[0] | trim }}<br>
           –<br>
           {{ job.dates.split('-')[1] | trim }}
@@ -35,12 +42,14 @@
           <div>
             <h3 class="exp-role">{{ job.role }}</h3>
             <span class="exp-company">
-              · <a href="{{ job.link }}" target="_blank" rel="noopener noreferrer">
+              <a href="{{ job.link }}" target="_blank" rel="noopener noreferrer">
                 {{ job.company }}
               </a>
             </span>
           </div>
-          <img src="{{ job.logo }}" alt="{{ job.company }} logo" class="exp-logo">
+          <span class="exp-logo-wrap">
+            <img src="{{ job.logo }}" alt="{{ job.company }} logo" class="exp-logo">
+          </span>
         </header>
 
         {% if job.summary %}
@@ -224,7 +233,20 @@
 
 <section id="contact" class="section">
   <h2>Contact</h2>
-  <p>Best way to reach me: <a href="mailto:jonah.engelmann@gmail.com">jonah.engelmann@gmail.com</a></p>
+  <div class="contact-card">
+    <p>Best way to reach me is by email. I'm currently exploring summer opportunities in tech, AI, and data consulting, and always happy to connect with people working in AI, analytics, or consulting.</p>
+    <div class="contact-actions">
+      <a class="btn btn--primary" href="mailto:jonah.engelmann@gmail.com">Email Me</a>
+      <a class="btn social-btn" href="https://github.com/Joengelmann" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+      <a class="btn social-btn" href="https://tinyurl.com/3jbkh45p" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
 </section>
 
 <!-- Modal root (one per page) -->

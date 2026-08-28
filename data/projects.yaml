@@ -1,4 +1,5 @@
 - title: Stock Sentiment vs Market Movement
+  featured: true
   summary: Analyzed how Reddit investor sentiment aligns with stock market behavior using NLP and time series analysis.
   tech: [Python, PyTorch, transformers, statsmodels, yfinance]
   links: { report: "static/report/Stock.pdf", github: "https://github.com/Joengelmann/stock-sentiments" }
@@ -11,6 +12,7 @@
   date: 2025-11
 
 - title: MorningMotivationBot
+  featured: true
   summary: Flask web app that delivers personalized motivational messages, haikus, images, and music based on user mood.
   tech: [Flask, OpenAI GPT-4o, DALL·E, TextBlob, Python]
   links: {github: "https://github.com/Joengelmann/MorningMotivationBot"}
@@ -33,7 +35,6 @@
   date: 2025-06
 
 - title: Wine Quality Analysis
-  featured: true
   summary: Modeled wine quality using seven supervised ML algorithms with cross-validation and grid search.
   tech: [Python, scikit-learn, pandas, numpy, matplotlib]
   links: {report: "static/report/Wine.pdf", github: "https://github.com/Joengelmann/Wine-Analysis"}
@@ -56,7 +57,6 @@
   date: 2025-04
 
 - title: School Course & Teacher Relational Database
-  featured: true
   summary: Designed a MySQL schema to manage enrollments, students, professors, departments, and courses.
   tech: [MySQL, SQL]
   links: {report: "static/report/CourseTeacher.pdf"}
