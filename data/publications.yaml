@@ -12,3 +12,9 @@
     - "Showed that small synonym-based prompt perturbations significantly degrade performance on otherwise equivalent coding problems."
     - "Provided evidence that coding success in LLMs relies on surface-level pattern recognition rather than robust reasoning."
 
+- title: "SAFE-Chat: A Modular Framework for Graph-Based Self-Harm Risk Detection in Conversational AI"
+  venue: "HIBIBI 2026"
+  date: "Aug 24, 2026"
+  year: "2026"
+  one_liner: "Published at HIBIBI 2026. DOI and online proceedings forthcoming."
+

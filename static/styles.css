@@ -455,11 +455,16 @@ body.modal-open { overflow: hidden; }
 /* Logo chip: a neutral white badge so logos (many with white/transparent
    backgrounds) sit consistently in both light and dark mode instead of
    floating as a raw rectangle on the card. */
+.exp-logos {
+  display: flex;
+  gap: .5rem;
+  flex-shrink: 0;
+}
 .exp-logo-wrap {
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
   width: 72px; height: 72px;
-  padding: .5rem;
+  padding: .2rem;
   border-radius: 12px;
   background: #fff;
   border: 1px solid var(--border);
@@ -490,7 +495,7 @@ body.modal-open { overflow: hidden; }
     --exp-node-col: 104px;
     --exp-gap: .75rem;
   }
-  .exp-logo-wrap { width: 56px; height: 56px; padding: .4rem; }
+  .exp-logo-wrap { width: 56px; height: 56px; padding: .15rem; }
 }
 
 /* ===================== FEATURED PROJECTS ===================== */

@@ -1,3 +1,14 @@
+- company: Accenture & The Wharton School
+  role: Technical Assistant, Accenture-Wharton Skills Index 2.0
+  dates: Sep 2026 - Feb 2027
+  summary: Joining the Wharton AI & Analytics Initiative to work with Accenture on how agentic AI is reshaping skill demand and workforce strategy across industries.
+  logos:
+    - "/static/img/Wharton_Logo_Circle-1.png"
+    - "/static/img/Accenture.webp"
+  link: "PLACEHOLDER_LINK"
+  bullets:
+    - Starting in late September 2026.
+
 - company: Mortenson
   role: Artificial Intelligence Intern
   dates: Jun 2026 - Aug 2026
